@@ -52,6 +52,8 @@ svg { width: 1.2em; height: 1.2em; fill: none; stroke: currentColor; stroke-widt
 .nav { display: flex; align-items: center; gap: 28px; }
 .nav a { text-decoration: none; font-weight: 600; font-size: .95rem; }
 .nav a:not(.btn):hover { color: var(--green-dark); }
+.nav-phone { white-space: nowrap; }
+@media (max-width: 1060px) and (min-width: 821px) { .nav { gap: 20px; } .nav-phone { display: none; } }
 .nav-toggle { display: none; background: none; border: 0; padding: 10px; cursor: pointer; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 5px 0; border-radius: 2px; transition: transform .25s, opacity .25s; }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
