@@ -37,7 +37,7 @@ const boxes = document.querySelectorAll('#checklist input');
 const countEl = document.getElementById('docs-count');
 const bar = document.getElementById('docs-bar');
 document.getElementById('docs-total').textContent = boxes.length;
-const KEY = 'vjimpot-checklist';
+const KEY = 'vjimpot-checklist-v2';
 let saved = [];
 try { saved = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
 boxes.forEach((b, i) => { b.checked = !!saved[i]; });
