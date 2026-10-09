@@ -8,3 +8,5 @@ Site statique (HTML/CSS/JS, aucune dépendance) : ouvrir `index.html` dans un na
 - `style.css` — mise en forme
 - `script.js` — menu mobile, checklist des documents, formulaire (ouvre un e-mail pré-rempli)
 - `assets/` — logo, vidéo de lancement, affiche PDF
+
+© Vipithan Jeyaragavan — tous droits réservés (voir `LICENSE`).
