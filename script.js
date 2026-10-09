@@ -76,9 +76,25 @@ form.addEventListener('submit', e => {
     'Merci et à bientôt.'
   ].filter(v => v !== null).join('\n');
 
-  window.location.href = 'mailto:vjimpot@gmail.com'
-    + '?subject=' + encodeURIComponent('Demande de rendez-vous – ' + d.name)
+  const out = document.getElementById('f-out');
+  const subject = 'Demande de rendez-vous – ' + d.name;
+  out.value = body;
+  document.getElementById('send-mail').href = 'mailto:vjimpot@gmail.com'
+    + '?subject=' + encodeURIComponent(subject)
     + '&body=' + encodeURIComponent(body);
+  // "?&body=" est compris à la fois par iPhone et Android
+  document.getElementById('send-sms').href = 'sms:+41798122674?&body=' + encodeURIComponent(body);
+  document.getElementById('form-result').hidden = false;
+  document.getElementById('copy-status').textContent = '';
+  document.getElementById('send-sms').focus();
 });
+document.getElementById('copy-btn').addEventListener('click', () => {
+  const out = document.getElementById('f-out');
+  const status = document.getElementById('copy-status');
+  const done = () => { status.textContent = 'Message copié. Collez-le dans un SMS au 079 812 26 74 ou un e-mail à vjimpot@gmail.com.'; };
+  const fallback = () => { out.focus(); out.select(); status.textContent = 'Texte sélectionné : copiez-le avec Ctrl+C (ou appui long sur mobile).'; };
+  try { navigator.clipboard.writeText(out.value).then(done, fallback); } catch (e) { fallback(); }
+});
+
 
 document.getElementById('year').textContent = new Date().getFullYear();
