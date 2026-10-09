@@ -82,6 +82,11 @@ form.addEventListener('submit', e => {
   document.getElementById('send-mail').href = 'mailto:vjimpot@gmail.com'
     + '?subject=' + encodeURIComponent(subject)
     + '&body=' + encodeURIComponent(body);
+  // Sur PC, mailto: n'ouvre rien sans logiciel de messagerie installé : liens webmail en complément
+  document.getElementById('send-gmail').href = 'https://mail.google.com/mail/?view=cm&fs=1&to=vjimpot@gmail.com'
+    + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  document.getElementById('send-outlook').href = 'https://outlook.live.com/mail/0/deeplink/compose?to=vjimpot@gmail.com'
+    + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   // "?&body=" est compris à la fois par iPhone et Android
   document.getElementById('send-sms').href = 'sms:+41798122674?&body=' + encodeURIComponent(body);
   document.getElementById('form-result').hidden = false;

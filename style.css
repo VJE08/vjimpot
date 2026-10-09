@@ -219,6 +219,8 @@ svg { width: 1.2em; height: 1.2em; fill: none; stroke: currentColor; stroke-widt
 .send-row .btn { padding: 14px 16px; }
 #send-sms { background: var(--green-dark); }
 .link-btn { font: inherit; color: var(--green-dark); font-weight: 700; text-decoration: underline; background: none; border: 0; padding: 0; cursor: pointer; }
+.webmail { margin: 0; padding: 12px 14px; border-radius: 10px; background: var(--cream-2); font-size: .92rem; }
+.webmail a { color: var(--green-dark); font-weight: 700; }
 @media (max-width: 400px) { .send-row { grid-template-columns: 1fr; } }
 .form-error { color: #c0392b; font-weight: 600; }
 
